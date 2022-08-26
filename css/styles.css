@@ -1,0 +1,640 @@
+/* ********** Custom Properties ********** */
+:root {
+    --first-color: gray;
+    --first-alpha-color: rgba(217, 0, 98, 0.75);
+    --second-color: rgba(20, 25, 45, 0.75);
+    --second-alpha-color: rgba(20, 25, 45, 0.75);
+    --third-color: #501464;
+    --third-alpha-color: rgba(80, 20, 100, 0.75);
+    --white-color: #fff;
+    --gray-light-color: #f3f3f3;
+    --gray-color: #ccc;
+    --gray-dark-color: #666;
+    --black-color: #000;
+    --link-color: #509ee3;
+    --title-color: #333;
+    --text-color: #222;
+    --white-alpha-color: rgba(255, 255, 255, 0.5);
+    --black-alpha-color: rgba(0, 0, 0, 0.5);
+    --font: "Raleway", sans-serif;
+    --max-width: 1200px;
+    --header-height: 4rem;
+  }
+
+
+
+
+
+  /* ********** Reset ********** */
+  html {
+    box-sizing: border-box;
+    font-family: var(--font);
+    font-size: 16px;
+    scroll-behavior: smooth;
+  }
+  
+  *,
+  *::after,
+  *::before {
+    box-sizing: inherit;
+  }
+  
+  body {
+    margin: 0;
+    overflow-x: hidden;
+    
+  }
+  
+  a {
+    color: var(--link-color);
+    transition: all 0.5s ease-out;
+    text-decoration: none;
+
+  }
+  
+  a:hover {
+    opacity: 0.75;
+  }
+  
+  h1 {
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    font-size: 2rem;
+    text-align: center;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: red;
+    
+    
+  }
+
+  /*
+  .imagen-1{
+    position: relative;
+    width: 300px;
+    height: 300px;
+   
+   background-image: url("../assets/orbit.png");
+  
+  }*/
+ 
+
+  h2 {
+    margin: 40px 0;
+    font-size: 1.4rem;
+    text-align: center;
+    color: gray;
+    padding: 0 20px;
+  }
+  
+  h3 {
+    margin: 30px 0 10px 0;
+    font-size: 1.3rem;
+    text-align: center;
+    padding: 0 20px;
+    color: red;
+  }
+  
+  h4 {
+    margin: 30px 0 10px 0;
+    font-size: 0.7;
+    text-align: center;
+    font-style: italic;
+    color: rgb(151, 2, 137);
+    padding: 0 20px;
+  }
+  
+  h5 {
+    margin: 20px 0 10px 0;
+    font-size: 0.6rem;
+    text-align: center;
+    color: #501464;
+  }
+  
+  h6 {
+    margin: 20px 0 10px 0 ;
+    font-size: 0.5rem;
+    color: #14192d;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  p {
+    line-height: 1.6;
+  }
+
+
+  /* ********** Menu ********** */
+  .menu-btn {
+    outline: thin solid var(--first-color);
+    border: 0;
+    cursor: pointer;
+    background-color: var(--second-color);
+  }
+  
+  .menu-btn svg {
+    fill: var(--first-color);
+  }
+  
+  .menu {
+    position: fixed;
+    left: 0;
+    bottom: var(--header-height);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--second-color);
+    
+    opacity: 0;  /*solo se verá cuando sea activo*/
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+  }
+  
+  .menu.is-active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  
+  .menu a {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: var(--first-color);
+  }
+  
+  .menu a:hover {
+    color: var(--white-color);
+    background-color: var(--first-color);
+  }
+  
+  @media screen and (min-width: 1024px) {
+    .menu-btn {
+      display: none;
+    }
+  
+    .menu {
+      position: static;
+      width: auto; /*que el ancho se adapte al nª enlaces que tenga*/
+      flex-direction: row;
+      opacity: 1;
+      pointer-events: auto;
+    }
+  
+    .menu a {
+      padding: 0 1rem;
+      
+    }
+  
+    .menu a:last-child { /*para igualar los paddings del último enlace
+      con el del iz del logo*/
+      padding-right: 0;
+    }
+  
+    .menu a:hover {
+      background-color: transparent;
+    }
+  }
+
+  
+  .footer {
+    margin-bottom: var(--header-height); /*para que se vea en mobile y no 
+    lo tape el header */
+    padding: 0.5rem;
+    text-align: center;
+    color: rgb(126, 94, 94);
+    background-color: rgb(13, 13, 26);
+  }
+
+  
+  .header {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 999;
+    padding: 1rem;
+    width: 100%;
+    height: var(--header-height);
+    background-color: var(--second-color);
+  }
+  
+  .header > .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+
+  
+ /*LIBRO*/
+
+
+ 
+
+@keyframes abrir-tapa{
+    0%{
+      transform-origin: 0 0;
+       transform: perspective(2000px) rotateY(0deg);
+    }
+    100%{
+     transform-origin: 0% 0%;
+     transform: perspective(2000px) rotateY(-86deg);
+  }
+       }
+  
+  
+  .abrir-tapa{
+        animation: abrir-tapa 5s ease-in-out both;
+        animation-play-state: paused;
+      }
+
+
+
+      
+  .btn-abrir-tapa{
+    background-color: rgb(54, 55, 54);
+    
+    margin-top: 50px;
+    margin-left: 45%;
+    
+    border-radius: 6px;
+    color: rgb(179, 244, 179);
+    padding: 5px;
+
+  
+  } 
+
+   
+      
+  .btn-abrir-la-espera{
+    background-color: rgb(54, 55, 54);
+    
+    margin-top: 50px;
+    margin-left: 45%;
+    
+    border-radius: 6px;
+    color: rgb(179, 244, 179);
+    padding: 5px;
+
+  
+  } 
+
+   
+     
+  .btn-abrir-el-futuro{
+    background-color: rgb(54, 55, 54);
+    
+    margin-top: 50px;
+    margin-left: 45%;
+    
+    border-radius: 6px;
+    color: rgb(179, 244, 179);
+    padding: 5px;
+
+  
+  } 
+
+
+  li{
+    font-size: 0.8rem;
+    padding: 0 15px;
+    font-weight: bold;
+    color: rgb(250, 85, 85);
+    
+  }
+
+ .libro-container{
+
+  background-color: rgb(88, 78, 78, 0);
+  position: relative;
+  width: 280px;
+  height: 280px;
+  margin-top: -40px;
+  
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 4px;
+ }
+
+  .libro-fondo{
+    background-color: black;
+    position: relative;
+    width: 280px;
+    height: 280px;
+    padding-left: 15px;
+    border-radius: 4px;
+    box-shadow: 0.4rem 0.4rem 0.7rem 0.1rem rgb(207, 206, 206);
+  
+  }
+
+  .libro-fondo>*{
+    position: absolute;
+    max-width: 95%;
+    height: 70%;
+    top: 50px;
+    right: 0px;
+    border-radius: 4px;
+  }
+
+  .libro-fondo li{
+    list-style: decimal;
+    margin-bottom: 5px;
+  }
+  
+  .libro-fondo a{
+    text-decoration: none;
+    color: red;
+    font-style: italic;
+    font-size: 0.8rem;
+    font-weight: bold;
+  }
+
+
+  .libro-tapa{
+    background-color: rgb(240, 236, 236);
+    margin-top: -100%;
+    z-index: 1;
+    width: 280px;
+    height: 280px;
+ 
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 4px;
+    
+  }
+
+      /*Media query versión desktop*/
+
+      @media screen and (min-width: 1024px) {
+        
+        .footer {
+          margin-bottom: 0; /*que el footer quede abajo de nuevo, ya que en
+          desktop no está el header abajo*/
+        }
+      
+        .header {
+          position: sticky; /*no tapa el sig elem, como sí lo hace fixed*/
+          top: 0;
+          padding: 0.5rem;
+          height: calc(var(--header-height) - 0.5rem);
+        }
+    }
+      
+
+    
+.ul{
+  width: 280px;
+  height: 280px;
+  border-radius: 4px;
+  position: relative;
+  
+  z-index: 1;
+  background-image: url("../assets/nubes-la-espera.png");
+  background-repeat: repeat;
+  background-size: 1800%;
+  background-position: -1100px -10px;
+
+  }
+
+.ul li{
+  list-style: none;
+   width: 260px;
+   height: 25px;
+   position: relative;
+   left: -40px;
+   top: -45px;
+}
+
+.ul a{
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    font-size: 15px;
+    text-align: center;
+    
+   transition: color 0.2s ease-in;
+}     
+
+
+/*El futuro*/
+
+    
+.ul-futuro{
+  background-image: url("../assets/jubany-el-futuro.jpg");
+ background-size: 250%;
+ background-repeat: no-repeat;
+ background-position: 16% 100%;
+  width: 280px;
+  height: 280px;
+  border-radius: 4px;
+  position: relative;
+  
+  z-index: 1;
+ 
+  }
+
+.ul-futuro li{
+  list-style: none;
+   width: 260px;
+   height: 20px;
+   position: relative;
+   left: -40px;
+   top: -55px;
+}
+
+.ul-futuro a{
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    font-size: 11px;
+    text-align: center;
+    
+   transition: color 0.2s ease-in;
+}     
+
+
+.track-name{
+ color: rgb(237, 232, 232);
+ width: 260px;
+ font-style: italic;
+ transition: transform 0.2s ease-in;
+}
+
+.track-name:hover{
+ transform: scale(1.01);
+ color: rgb(228, 100, 100);
+}
+
+.btn-play{
+     
+ width: 15px;
+ height: 15px;
+ 
+ background-color: rgb(105, 66, 66);
+ clip-path: polygon(50% 0%, 50% 100%, 100% 50%);
+ transition: transform 0.2s linear;
+}
+
+.btn-play-border{
+ border: 2px solid rgb(144, 111, 111);
+ background-color: var(--black-play);
+ 
+ width: 25px;
+ height: 25px;
+ border-radius: 50%;
+ padding-top: 3px;
+ padding-right: 6px;
+
+ 
+}
+.btn-play:hover{
+ transform: scale(1.2);
+ background-color: rgb(238, 111, 111);
+ 
+ 
+}
+
+
+/*El futuro*/
+
+
+
+.track-name-futuro{
+ /* color: rgb(146, 40, 40);*/
+ color: rgb(177, 122, 122);
+  width: 260px;
+  font-style: italic;
+  font-size: 14px;
+  transition: transform 0.2s ease-in;
+ }
+
+ .track-name-futuro:hover{
+  transform: scale(1.04);
+  color: rgb(238, 206, 206);
+ }
+ 
+
+.btn-play-futuro{
+     
+  width: 12px;
+  height: 12px;
+  
+  background-color: rgb(122, 84, 84);
+  clip-path: polygon(50% 0%, 50% 100%, 100% 50%);
+  transition: transform 0.2s linear;
+ }
+ 
+ .btn-play-border-futuro{
+  border: 1.5px solid rgb(144, 111, 111);
+  background-color: var(--black-play);
+  margin-top: -5px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  padding-top: 2px;
+  padding-right: 5px;
+ 
+  
+ }
+ .btn-play-futuro:hover{
+  transform: scale(1.2);
+  background-color: rgb(238, 206, 206);
+  
+  
+ }
+
+/*Temas*/
+
+.h2-letra{
+  font-size: 1.2rem;
+  color: rgb(215, 210, 210, 0);
+  font-style: normal;
+}
+
+.tema{
+  background-color: #000;
+  width: 100%;
+  height: 80px;
+  font-size: 1.5rem;
+}
+
+.letra{
+  background-color: rgb(164, 105, 105);
+  width: 100%;
+  height: auto;
+  
+  margin-top: -50px;
+  padding: 50px 0;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-style: italic;
+}
+
+.letra p{
+  padding: 0 50px;
+}
+
+
+/*El futuro*/
+
+
+.letra-el-futuro{
+  background-image: url("../assets/jubany-el-futuro.jpg");
+  background-repeat: no-repeat;
+  background-size: 300%;
+  background-position: 15% 0%;
+  width: 100%;
+  height: auto;
+  color: rgb(146, 100, 86);
+  margin-top: -50px;
+  padding: 50px 0;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-style: italic;
+}
+
+.letra-el-futuro p{
+  padding: 0 50px;
+}
+
+.video-container{
+  position: relative;
+  max-width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+
+}
+
+
+.video-container>*{
+  position: absolute;
+  width: 100%;      
+  height: 100%;
+  
+  
+  
+  z-index: 1;
+  }
+ 
+
+    
+    
+
+
+
+    .running{
+      
+      animation-play-state: running;
+    }
+      
+    

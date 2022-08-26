@@ -1,0 +1,279 @@
+body{
+    background-color: rgb(7, 10, 26);
+
+}
+
+
+
+/*LAS CHICAS Y SU SOLEDAD*/
+
+
+.las-chicas-container{
+    background-color: black;
+    width: 280px;
+    height: 300px;
+     margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 300px;
+    overflow: hidden;
+}
+
+.video-las-chicas{
+     
+   
+    width: 280px;
+    height: 350px;
+    position: relative;
+   padding-top: 54%;
+   z-index: 2; 
+}
+.video-las-chicas>*{
+    position: absolute;
+    max-width: 100%;
+    height: auto;
+    opacity: 0.8;
+    
+}
+
+
+
+.img-las-chicas{
+   
+    background-color: rgb(8, 15, 21);
+    width: 200px;
+    height: auto;
+    position: relative;
+    left: 20%;
+    top: -15%;
+    z-index: 0;
+  
+
+   
+    
+}
+.img-las-chicas>*{
+    position: absolute;
+    max-width: 100%;
+    height: auto;
+  border: 20px rgb(23, 22, 22) solid;
+}
+
+@keyframes ala-iz{
+    0%{
+        transform: rotate(0deg);
+    }
+    25%{
+        transform: rotate(-5deg);
+    }
+    50%{
+        transform: perspective(1000px) rotateY(-10deg) rotateX(-5deg) rotate(-5deg);
+    }
+    65%{
+        transform: rotate(-10deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+
+
+@keyframes ala-der{
+    0%{
+        transform: rotate(0deg);
+    }
+    25%{
+        transform: perspective(1000px) rotate(-5deg) rotateY(-10deg);
+    }
+    50%{
+        transform: rotate(10deg);
+    }
+    65%{
+        transform: rotate(5deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+
+
+
+.ala-iz{
+    
+    background-image: url("../assets/angel-ala-izq.png");
+     background-repeat: no-repeat;
+    position: absolute;
+    background-size: 115%;
+    width: 280px;
+    height: 280px;
+    background-position: 30% 70%;
+    animation: ala-iz 6s ease-in-out infinite;
+
+}
+
+.ala-der{
+    position: absolute;
+    background-image: url("../assets/ala-der-final.png");
+     background-repeat: no-repeat;
+     background-size: 115%;
+    background-position: -340% 55%;
+   
+    width: 280px;
+    height: 280px;
+    animation: ala-der 10s ease-in-out infinite;
+}
+
+.cuerpo-angel{
+    position: absolute;
+    background-image: url("../assets/cuerpo.png");
+     background-repeat: no-repeat;
+    background-position: 60% 100%;
+    bottom: 0%;
+    width: 280px;
+    height: 280px;
+
+    background-size: 105%;
+    
+}
+
+
+/*La espera*/
+
+@keyframes opacity{
+    0%{
+        opacity: 1;
+        transform: translatey(1%);
+    }
+   
+    25%{
+        opacity: 0.95;
+        transform: translatey(0%);
+    }
+    50%{
+        opacity: 0.98;
+        transform: translatey(1.5%);
+    }
+
+    75%{
+        opacity: 0.95;
+        transform: translatey(0.5%);
+    }
+    100%{
+        opacity: 1;
+        transform: translatey(1%);
+    }
+}
+
+
+
+
+
+
+
+.la-espera-tapa{
+    margin-top: -100%;
+    position: relative;
+    z-index: 2;
+    
+}
+
+.la-espera-cerca{
+    background-image: url("../assets/la-espera-cerca.png");
+    width: 280px;
+    height: 280px;
+    position: relative;
+    
+    background-repeat: no-repeat;
+    background-size: 250%;
+    background-position: 30% 16%;
+    margin-left: auto;
+    margin-right: auto;
+    animation: opacity 1s linear infinite;
+    
+}
+
+
+.fondo-la-espera{
+    background-image: url("../assets/nubes-la-espera.png");
+    width: 280px;
+    height: 280px;
+    position: relative;
+    
+    background-repeat: no-repeat;
+    background-size: 670%;
+    background-position: 13% 0%;
+    margin-left: auto;
+    margin-right: auto;
+   
+  
+    
+}
+
+
+/*EL FUTURO*/
+
+
+@keyframes brazo{
+    0%{
+       transform: rotate(0deg);
+       
+    }
+    7%{
+        transform: rotate(0deg);
+        
+     }
+    30%{
+         transform: rotate(-20deg) translateX(9%) translateY(6%);
+         
+     }
+     55%{
+        transform: rotate(-20deg) translateX(9%) translateY(6%);
+        
+    }
+     100%{
+        transform: rotate(0deg);
+        
+     }
+ }
+
+
+
+.el-futuro-tapa{
+    margin-top: -100%;
+    position: relative;
+    z-index: 2;
+    background-color: aqua;
+
+    
+}
+
+.el-futuro{
+    background-image: url("../assets/jubany-el-futuro.jpg");
+    width: 280px;
+    height: 280px;
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+    margin-left: auto;
+    margin-right: auto;
+   
+}
+
+.el-futuro-brazo{
+    background-image: url("../assets/brazo-el-futuro.png");
+   background-repeat: no-repeat;
+   background-size: cover;
+    width: 280px;
+    height: 280px;
+animation: brazo 5s ease-in-out infinite;
+    
+    position: relative;
+    
+}
+
+.el-futuro-brazo>*{
+    position: absolute;
+    max-width: 100%;
+    height: auto;
+    
+}
